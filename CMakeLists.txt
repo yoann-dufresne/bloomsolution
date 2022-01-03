@@ -16,10 +16,12 @@ set(CMAKE_CXX_FLAGS "-Wall -Ofast -g")
 set(SRCS
   main.cpp
   seq_reader.cpp
+  kmer.cpp
   )
 
 set(HEADERS
   seq_reader.hpp
+  kmer.hpp
   )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})

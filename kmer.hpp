@@ -1,3 +1,4 @@
+#include <cstdint>
 
 #ifndef KMER_H
 #define KMER_H
