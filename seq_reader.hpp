@@ -1,4 +1,4 @@
-#include <iostream>
+#include <fstream>
 #include <string>
 
 
@@ -7,7 +7,7 @@
 
 class SeqReader {
 private:
-	ifstream stream;
+	std::ifstream stream;
 public:
 	/** Construct a sequence reader.
 	  * Read the char one by one when next is called.
