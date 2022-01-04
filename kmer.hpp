@@ -24,6 +24,12 @@ public:
 	 * @param nucl The new nucleotide to add
 	 **/
 	void construct_next(char nucl);
+
+	/** Generate the reverse complement of a kmer
+	 * @param Kmer to reverse complement
+	 * @return reverse complement
+	 */
+	uint64_t rev_comp(uint64_t kmer);
 };
 
 #endif

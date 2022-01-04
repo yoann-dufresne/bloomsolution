@@ -29,8 +29,10 @@ char SeqReader::next() {
 		return this->next();
 	}
 	// Unwanted char
-	else if (c == 'N' or c == '\n') {
-		return this->next();
+	while (c == 'N' or c == '\n') {
+		this->stream.get(c);
+		if (this->stream.bad() or this->stream.eof())
+			return 0;
 	}
 
 	return c;

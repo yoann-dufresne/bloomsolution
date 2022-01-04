@@ -36,7 +36,7 @@ void BloomFilter::add_value(uint64_t x) {
 		uint64_t bit_idx = h % 64;
 
 		// Modify the BF
-		uint64_t bit = 1 << bit_idx;
+		uint64_t bit = 1ul << bit_idx;
 		this->array[uint_idx] |= bit;
 	}
 }

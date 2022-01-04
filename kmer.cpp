@@ -46,3 +46,22 @@ void KmerManipulator::construct_next(char nucl) {
   // Merge nucleotide
   this->current_rev |= bin_nucl;
 }
+
+uint64_t KmerManipulator::rev_comp(uint64_t kmer) {
+  uint64_t rc = 0;
+
+  for (uint i=0 ; i<k ; i++) {
+    // Get the current nucleotide on the right
+    uint64_t nucl = (kmer >> (2 * i));
+    // Complement the kmer
+    nucl = ~nucl;
+    // Only keep the last nucl
+    nucl &= 0b11;
+    // Make the space into the rc
+    rc <<= 2;
+    // Add the kmer to the rc
+    rc |= nucl;
+  }
+
+  return rc;
+}
