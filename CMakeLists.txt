@@ -17,11 +17,15 @@ set(SRCS
   main.cpp
   seq_reader.cpp
   kmer.cpp
+  bloom.cpp
+  hash.cpp
   )
 
 set(HEADERS
   seq_reader.hpp
   kmer.hpp
+  bloom.hpp
+  hash.hpp
   )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})

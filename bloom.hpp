@@ -1,3 +1,5 @@
+#include <cstdint>
+
 
 #ifndef BLOOM_H
 #define BLOOM_H
@@ -27,6 +29,11 @@ public:
 	  * @retun False is the value is not there. True if the value is present or a collision occured.
 	  **/
 	bool is_present(uint64_t x);
+
+	/** Print the bloom filter content.
+	 * WARNING: This function should not be used in production or for large BF
+	 **/
+	void print_bloom();
 };
 
 #endif

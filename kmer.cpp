@@ -6,8 +6,7 @@ using namespace std;
 KmerManipulator::KmerManipulator(uint64_t k) : k(k) {
   // Create a mask of size (k-1) * 2 bits
   // If k = 3 => mask = 001111
-  this->mask = (1 << (2 * (k-1))) - 1;
-  cout << mask << endl;
+  this->mask = (1ul << (2 * (k-1))) - 1;
 
   this->current_kmer = 0;
   this->current_rev = 0;
