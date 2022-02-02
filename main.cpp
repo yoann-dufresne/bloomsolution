@@ -19,6 +19,23 @@ int main(int argc, char const *argv[]) {
 	uint64_t bloom_size = 1ul << 33;
 	uint64_t r = 1000000;
 
+	/*   #         fichier          k    n   nf   r
+      ./monprog data/ecoli.fasta 31 456637 3 10000
+	*/
+	// parsing args
+	if (argc != 6) {
+		cerr << "Wrong command line. Command example:" << endl;
+		// I should explain the numbers here
+		cerr << "./bloom_test data/ecoli.fasta 31 456637 3 10000" << endl;
+		exit(1);
+	}
+	filename = string(argv[1]);
+
+	k = atoi(argv[2]);
+	bloom_size = stoull(string(argv[3])); // For large value parsing
+	num_hash = atoi(argv[4]);
+	r = stoull(string(argv[5])); // For large value parsing
+
 	// Init objects and useful variables
 	char c = 0;
 	SeqReader reader(filename);
